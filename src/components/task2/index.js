@@ -11,6 +11,7 @@ const Task2Simon = () => {
 
     return (
         <Task2Container>
+            <h1>Task 2</h1>
             <Instructions>
                 ** Cuando la luz este en verde puedes iniciar a marcar tus respuestas!
             </Instructions>
