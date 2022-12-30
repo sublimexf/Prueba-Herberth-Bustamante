@@ -15,7 +15,8 @@ const Task1 = () => {
         let b = 250
         let c = 500
         equilibrar(a, b, c)
-    }, [])
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []) 
 
     // Se va equilibrando la ecuacion, buscando cumplir a^2 + b^2 = c^2
     // caso 1: a^2 + b^2 < c^2
