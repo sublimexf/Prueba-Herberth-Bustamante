@@ -1,9 +1,14 @@
-import { LostBox, LostContainer, SaveButton, Score, TextBox, Title } from "./style"
+import { LostBox, LostContainer, TextBox } from "./style"
 import { db } from '../../backend/firebase'
 import { GreenButton } from "../simon/style"
+import { useEffect, useState } from "react"
 
 
 const Lost = ({player, setPlayer, score, hideLost}) => {
+    const [height, setHeight] = useState(0)
+    useEffect(() => {
+        setHeight(document.getElementById("root").clientHeight)
+    }, [])
 
     const savePlayer = () => {
         const auxPlayer = player === '' ? "Player" : player
@@ -18,7 +23,7 @@ const Lost = ({player, setPlayer, score, hideLost}) => {
     }
 
     return (
-        <LostContainer>
+        <LostContainer height={height}>
             <LostBox>
                 <h1>Gracias por Jugar !!</h1>
                 <h2>Ingresa tu nombre</h2>

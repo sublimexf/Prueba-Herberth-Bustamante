@@ -5,14 +5,14 @@ export const LostContainer = styled.div`
     top: 0px;
     left: 0px;
     width: 100vw;
-    height: 100vh;
+    height: calc(100px + ${props => props.height}px);
     background: rgba(103, 128, 159, 0.5);
     z-index: 20;
 `
 
 export const LostBox = styled.div`
     position: absolute;
-    top: calc(50vh - 250px);
+    top: calc(60% - 250px);
     left: calc(50vw - 250px);
     display: flex;
     align-items: center;

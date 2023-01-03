@@ -43,6 +43,8 @@ const Simon = ({showLost, setShowLost, setScore}) => {
                 case 3:
                     sound4.play();
                     break;
+                default:
+                    break;
             }
         }
 
@@ -50,6 +52,7 @@ const Simon = ({showLost, setShowLost, setScore}) => {
             const timmer = setTimeout(() => setActive(-1), 500)
             return () => clearTimeout(timmer)
         }
+        // eslint-disable-next-line
     }, [isActive])
 
     // Loop through the array of colors, and turn them on
@@ -70,6 +73,7 @@ const Simon = ({showLost, setShowLost, setScore}) => {
 
             return () => clearTimeout(timmer)
         }
+        // eslint-disable-next-line
     }, [queuePosition])
 
     // It checks the answer
@@ -83,7 +87,7 @@ const Simon = ({showLost, setShowLost, setScore}) => {
                 setAnswer(-2)
 
                 if (answerPosition === colorsQueue.length - 1) {
-                    const timmer = setTimeout(() => { // It starts again with the next round
+                    setTimeout(() => { // It starts again with the next round
                         add2Queue()
                         setAnswPosition(0)
                     }, 2000)
@@ -98,6 +102,7 @@ const Simon = ({showLost, setShowLost, setScore}) => {
                 setQueue([])
             }
         }
+        // eslint-disable-next-line
     }, [answer])
 
     return (
